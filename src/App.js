@@ -1,23 +1,47 @@
-import logo from './logo.svg';
+import { BrowserRouter, Route, Switch } from "react-router-dom";
 import './App.css';
+import Home from './components/Home';
+import DisplayPage from './components/DisplayPage';
+import Login from './components/Login'
+import UploadForm from "./components/UploadForm";
+import NavBar from "./components/NavBar"
+import { useState, useEffect } from "react";
 
 function App() {
+  const [uploads, setUploads] = useState([])
+  const [currentUser, setCurrentUser] = useState("")
+    
+    useEffect(() =>{
+    fetch("http://localhost:3000/uploads")
+        .then((r) => r.json())
+        .then((uploads) => setUploads(uploads))
+    }, [])
+
+    function onAddUpload(newUpload){
+      setUploads([...uploads, newUpload])
+    }
+
+    function handleUser(e){
+      setCurrentUser(e.target.value)
+    }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <NavBar currentUser={currentUser} />
+      <Switch>
+        <Route path="/displaypage">
+          <DisplayPage uploads={uploads} />
+        </Route>
+        <Route path="/login">
+          <Login currentUser={currentUser} setCurrentUser={setCurrentUser} handleUser={handleUser}/>
+        </Route>
+        <Route path="/uploadform">
+          <UploadForm currentUser={currentUser} onAddUpload={onAddUpload}/>
+        </Route>
+        <Route exact path="/">
+          <Home />
+        </Route>
+      </Switch>
     </div>
   );
 }

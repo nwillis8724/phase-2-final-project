@@ -1,38 +1,123 @@
-.App {
+
+body{
+  background-color:#15171e;
+}
+
+h1{
   text-align: center;
+  color: whitesmoke;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+p{
+  text-align: center;
+  color: whitesmoke;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.display_cards{
+  width: 450px;
+  height: 250px;
+  margin: 2%;
+  margin-left: 5%;
+  background-color: #262b3b;
+  border-radius: 5px;
+  box-shadow: rgba(255, 255, 255, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+  float: left;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+#navBar{
+  cursor:pointer;
+  text-align: center;
+  margin: 2px;
+  border: solid 2px #32a1ce;
+  border-radius: 7px;
+  background: black;
+  color: whitesmoke;
+
+}
+
+#upload_form{
   color: white;
+  text-align: center;
+  border-radius: 5px;
+  position: fixed;
+  left: 25%;
+  width: 50%;
+  height: 55%;
+  background-color: #262b3b;
+  box-shadow: rgba(255, 255, 255, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+
 }
 
-.App-link {
-  color: #61dafb;
+.like_button{
+  margin: 10px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+#title_input{
+  width: 60%;
+  height: 5%;
+  padding-bottom: 1px;
+  background-color: rgb(73, 75, 92);
+  font-size: 20px;
 }
+
+#content_input{
+  position: absolute;
+  top: 25%;
+  left: 10%;
+  width: 80%;
+  height: 65%;
+  padding-top: 1;
+  background-color: rgb(73, 75, 92);
+  padding-left: 1%;
+  font-size: 18px;
+  border-radius: 1%;
+}
+
+#submit_upload{
+  position: absolute;
+  bottom: 3%;
+  right: 3%;
+  width: 10%;
+  height: 4%; 
+}
+
+#login_form{
+  position: fixed;
+  transform: translate(-50%, 50%);
+  left: 50%;
+  width: 250px;
+  display: flex;
+  justify-content: center;
+  height: 3%;
+  padding: 2%;
+  background-color: #262b3b;
+  border-radius: 5px;
+  box-shadow: rgba(255, 255, 255, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+
+.login_input{
+  position: absolute;
+  top: 25%;
+  background-color: rgb(73, 75, 92);
+  left: 15%;
+  height: 20%;
+  width: 55%;
+}
+
+.password_input{
+  position: absolute;
+  top: 55%;
+  width: 55%;
+  height: 20%;
+  left: 15%;
+  background-color: rgb(73, 75, 92);
+}
+
+.login_submit{
+  transform: translate(0, -50%);
+  position: absolute;
+  top: 50%;
+  left: 75%;
+  background-color: rgb(73, 75, 92);
+}
+
