@@ -4,9 +4,7 @@ import { useHistory } from "react-router-dom";
 function UploadForm({ currentUser, onAddUpload}){
     const [newTitle, setNewTitle] = useState("")
     const [newContent, setNewContent] = useState("")
-    const history = useHistory()
-
-        console.log(newTitle, newContent)   
+    const history = useHistory()  
 
     function handleSubmit(e){
         e.preventDefault()
@@ -36,7 +34,7 @@ function UploadForm({ currentUser, onAddUpload}){
 
     return (
         <div>
-          <h1>UploadForm</h1>
+          <h1>Upload Form</h1>
             <div>
                 <form onSubmit={handleSubmit} id="upload_form">
                     <h2>Upload Here!</h2>

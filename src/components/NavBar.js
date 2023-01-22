@@ -11,7 +11,8 @@ function NavBar({currentUser}){
         background: "black",
         textDecoration: "none",
         color: "white",
-      };
+        cursor:"pointer"
+  };
 
     return (
         <div id="navBar">
@@ -55,6 +56,16 @@ function NavBar({currentUser}){
         >
           Display
         </NavLink>
+        {currentUser === "" ? null : <NavLink
+        to="/signout"
+        exact
+        style={linkStyles}
+        activeStyle={{
+          background: "aqua",
+        }}
+      >
+        Sign Out
+      </NavLink>}
         </div>
     )
 }

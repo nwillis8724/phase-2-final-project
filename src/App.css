@@ -11,6 +11,7 @@ h1{
 p{
   text-align: center;
   color: whitesmoke;
+  padding: 7px;
 }
 
 .display_cards{
@@ -45,7 +46,6 @@ p{
 }
 
 #navBar{
-  cursor:pointer;
   text-align: center;
   margin: 2px;
   border: solid 2px #32a1ce;
@@ -70,6 +70,30 @@ p{
 
 .like_button{
   margin: 10px;
+  border-radius: 5px;
+  background-color: #15171e;
+  cursor:pointer;
+}
+
+.delete_button{
+  background-color: #15171e;
+  color: whitesmoke;
+  border-radius: 5px;
+  cursor:pointer;
+}
+
+.signout_button{
+  position: absolute;
+  transform: translate(-50%,-50%);
+  left: 50%;
+  top: 20%;
+  height: 5%;
+  width: 10%;
+  background-color: #262b3b;
+  color: whitesmoke;
+  border-radius: 5px;
+  box-shadow: rgba(255, 255, 255, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+  cursor:pointer;
 }
 
 #title_input{

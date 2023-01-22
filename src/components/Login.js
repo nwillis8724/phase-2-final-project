@@ -18,7 +18,7 @@ function Login({ handleUser, handleInput }) {
             <input className="login_input" type="text" name="username" placeholder="Username" onChange={handleInput} />
           </div>
           <div>
-            <input className="password_input" type="password" name="password" placeholder="Password" />
+            <input className="password_input" type="password" name="password" placeholder="Password(doesn't matter)" />
           </div>
           <input className="login_submit" type="submit" value="Login" />
         </form>
