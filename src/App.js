@@ -10,6 +10,7 @@ import { useState, useEffect } from "react";
 function App() {
   const [uploads, setUploads] = useState([])
   const [currentUser, setCurrentUser] = useState("")
+  const [currentInput, setCurrentInput] = useState("")
     
     useEffect(() =>{
     fetch("http://localhost:3000/uploads")
@@ -21,8 +22,12 @@ function App() {
       setUploads([...uploads, newUpload])
     }
 
-    function handleUser(e){
-      setCurrentUser(e.target.value)
+    function handleInput(e){
+      setCurrentInput(e.target.value)
+    }
+
+    function handleUser(){
+      setCurrentUser(currentInput)
     }
 
   return (
@@ -33,7 +38,7 @@ function App() {
           <DisplayPage uploads={uploads} />
         </Route>
         <Route path="/login">
-          <Login currentUser={currentUser} setCurrentUser={setCurrentUser} handleUser={handleUser}/>
+          <Login handleUser={handleUser} handleInput={handleInput}/>
         </Route>
         <Route path="/uploadform">
           <UploadForm currentUser={currentUser} onAddUpload={onAddUpload}/>

@@ -22,6 +22,26 @@ p{
   border-radius: 5px;
   box-shadow: rgba(255, 255, 255, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
   float: left;
+  overflow-y:auto
+}
+
+.display_cards{
+  scrollbar-width: auto;
+  scrollbar-color: #312f32 #fafafa;
+}
+
+.display_cards::-webkit-scrollbar {
+  width: 13px;
+}
+
+.display_cards::-webkit-scrollbar-track {
+  background: #262b3b;
+}
+
+.display_cards::-webkit-scrollbar-thumb {
+  background-color: #312f32;
+  border-radius: 10px;
+  border: 1px solid #ffffff;
 }
 
 #navBar{
