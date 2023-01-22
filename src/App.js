@@ -14,8 +14,9 @@ function App() {
   const [uploads, setUploads] = useState([])
   const [currentUser, setCurrentUser] = useState("")
   const [currentInput, setCurrentInput] = useState("")
-  const [likes, setLikes] = useState("")
+  const [filterValue, setFilterValue] = useState("Filter By")
   const history = useHistory()
+
     useEffect(() =>{
     fetch("http://localhost:3000/uploads")
         .then((r) => r.json())
@@ -45,7 +46,6 @@ function App() {
     }
 
     function updateLikes(likedUpload){
-      console.log(likedUpload)
       const updatedLikes = uploads.map((upload) => {
         if (upload.title === likedUpload.title){
           return likedUpload
@@ -56,12 +56,23 @@ function App() {
       setUploads(updatedLikes)
     }
 
+    function handleChange(e){
+      setFilterValue(e.target.value)
+  }
+  
+  const filteredUploads = uploads.filter(upload => {
+    if(filterValue === "Filter By"){
+      return upload
+    }else{
+      return upload.category === filterValue
+    }
+  })
   return (
     <div>
       <NavBar currentUser={currentUser} />
       <Switch>
         <Route path="/displaypage">
-          <DisplayPage uploads={uploads} onDeleteUpload={onDeleteUpload} updateLikes={updateLikes} />
+          <DisplayPage filterValue={filterValue} handleChange={handleChange} uploads={filteredUploads} onDeleteUpload={onDeleteUpload} updateLikes={updateLikes} />
         </Route>
         <Route path="/login">
           <Login handleUser={handleUser} handleInput={handleInput}/>
