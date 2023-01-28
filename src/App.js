@@ -14,7 +14,7 @@ function App() {
   const [uploads, setUploads] = useState([])
   const [currentUser, setCurrentUser] = useState("")
   const [currentInput, setCurrentInput] = useState("")
-  const [filterValue, setFilterValue] = useState("Filter By")
+  const [filterValue, setFilterValue] = useState("No Filter")
   const history = useHistory()
 
     useEffect(() =>{
@@ -27,7 +27,7 @@ function App() {
       setUploads([...uploads, newUpload])
     }
 
-    function handleInput(e){
+    function handleLoginInput(e){
       setCurrentInput(e.target.value)
     }
 
@@ -61,7 +61,7 @@ function App() {
   }
   
   const filteredUploads = uploads.filter(upload => {
-    if(filterValue === "Filter By"){
+    if(filterValue === "No Filter"){
       return upload
     }else{
       return upload.category === filterValue
@@ -72,16 +72,30 @@ function App() {
       <NavBar currentUser={currentUser} />
       <Switch>
         <Route path="/displaypage">
-          <DisplayPage filterValue={filterValue} handleChange={handleChange} uploads={filteredUploads} onDeleteUpload={onDeleteUpload} updateLikes={updateLikes} />
+          <DisplayPage 
+            filterValue={filterValue} 
+            handleChange={handleChange} 
+            uploads={filteredUploads} 
+            onDeleteUpload={onDeleteUpload} 
+            updateLikes={updateLikes} 
+          />
         </Route>
         <Route path="/login">
-          <Login handleUser={handleUser} handleInput={handleInput}/>
+          <Login 
+            handleUser={handleUser} 
+            handleLoginInput={handleLoginInput}
+          />
         </Route>
         <Route path="/signout">
-          <SignOut handleSignOut={handleSignOut}/>
+          <SignOut 
+            handleSignOut={handleSignOut}
+          />
         </Route>
         <Route path="/uploadform">
-          <UploadForm currentUser={currentUser} onAddUpload={onAddUpload}/>
+          <UploadForm 
+            currentUser={currentUser} 
+            onAddUpload={onAddUpload}
+          />
         </Route>
         <Route exact path="/">
           <Home />

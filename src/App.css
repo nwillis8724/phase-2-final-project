@@ -156,22 +156,16 @@ p{
 }
 
 .login_input{
+  transform: translate(-50%, 50%);
+  cursor:text;
   position: absolute;
   top: 25%;
   background-color: rgb(73, 75, 92);
-  left: 15%;
+  left: 40%;
   height: 20%;
   width: 55%;
 }
 
-.password_input{
-  position: absolute;
-  top: 55%;
-  width: 55%;
-  height: 20%;
-  left: 15%;
-  background-color: rgb(73, 75, 92);
-}
 
 .login_submit{
   transform: translate(0, -50%);

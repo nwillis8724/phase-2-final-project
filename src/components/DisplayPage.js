@@ -43,7 +43,7 @@ function DisplayPage({uploads, onDeleteUpload, updateLikes, filterValue, handleC
         <div>
             <h1>The Log!</h1>
             <select id="filter_value"value={filterValue} onChange={(e) => handleChange(e)}>
-                <option>Filter By</option>
+                <option>No Filter</option>
                 <option>Misc</option>
                 <option>Music</option>
                 <option>Idea</option>
@@ -61,7 +61,7 @@ function DisplayPage({uploads, onDeleteUpload, updateLikes, filterValue, handleC
                             <button className="like_button" onClick={(e) => handleLike(e, upload)}>👍</button>
                             {upload.likes} likes
                         </p>
-                        <p>Uploaded By: {upload.uploadedBy}</p>
+                        <p>Uploaded By: {upload.uploadedBy ? upload.uploadedBy : "Anonymous"}</p>
                     </div>
                 )
             })}

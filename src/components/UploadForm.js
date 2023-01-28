@@ -29,6 +29,7 @@ function UploadForm({ currentUser, onAddUpload}){
         .then((r) => r.json())
         .then((newUpload) => onAddUpload(newUpload))
 
+        //reset inputs to blank after submit
         document.getElementById("title_input").value = ""
         document.getElementById("content_input").value = ""
 
