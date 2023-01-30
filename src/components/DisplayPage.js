@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react"
 
 
 function DisplayPage({uploads, onDeleteUpload, updateLikes, filterValue, handleChange}){  
-    const [likeState, setLikeState] = useState(true)
+
 
 
     function handleDelete(e){
@@ -19,23 +19,22 @@ function DisplayPage({uploads, onDeleteUpload, updateLikes, filterValue, handleC
     }
 
     function handleLike(e, targetUpload){
-        let cardHtml = e.target.innerHTML
-        setLikeState(!likeState)
-        console.log(likeState)
-        if(likeState === false){
-            cardHtml = "👎"
-        }
-        fetch(`http://localhost:3000/uploads/${targetUpload.id}`, {
-            method: "PATCH",
-            headers: {
-                "Content-Type": "application/json",
-              },
-              body: JSON.stringify({
-                likes: (targetUpload.likes + 1)
-              }),
-        })
-        .then((r) => r.json())
-        .then((likedUpload) => updateLikes(likedUpload))
+        
+        
+            fetch(`http://localhost:3000/uploads/${targetUpload.id}`, {
+                method: "PATCH",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({
+                    likeStatus: true,
+                    likes: (targetUpload.likes + 1)
+                }),
+            })
+            .then((r) => r.json())
+            .then((likedUpload) => updateLikes(likedUpload))
+        
+
     }
 
     
