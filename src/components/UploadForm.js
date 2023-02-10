@@ -47,7 +47,7 @@ function UploadForm({ currentUser, onAddUpload}){
                 <form onSubmit={handleSubmit} id="upload_form">
                     <h2>Upload Here!</h2>
                     <input id="title_input" placeholder="Title" onChange={(e) => setNewTitle(e.target.value)}></input>
-                    <select value={dropValue} onChange={(e) => handleChange(e)}>
+                    <select class="dropdown_select" value={dropValue} onChange={(e) => handleChange(e)}>
                         <option>Misc</option>
                         <option>Music</option>
                         <option>Idea</option>

@@ -175,3 +175,9 @@ p{
   background-color: rgb(73, 75, 92);
 }
 
+.dropdown_select{
+  background-color: rgb(73, 75, 92);
+  height: 38px;
+  position: relative; 
+  top: -2px;
+}
