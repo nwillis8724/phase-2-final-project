@@ -1,5 +1,4 @@
-import { upload } from "@testing-library/user-event/dist/upload"
-import React, { useEffect, useState } from "react"
+import React from "react"
 
 
 function DisplayPage({uploads, onDeleteUpload, updateLikes, filterValue, handleChange}){  

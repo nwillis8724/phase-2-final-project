@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react"
+import React, { useState } from "react"
 import { useHistory } from "react-router-dom";
 
 function UploadForm({ currentUser, onAddUpload}){
@@ -29,7 +29,6 @@ function UploadForm({ currentUser, onAddUpload}){
         .then((r) => r.json())
         .then((newUpload) => onAddUpload(newUpload))
 
-        //reset inputs to blank after submit
         document.getElementById("title_input").value = ""
         document.getElementById("content_input").value = ""
 
@@ -45,7 +44,7 @@ function UploadForm({ currentUser, onAddUpload}){
           <h1>Upload Form</h1>
             <div>
                 <form onSubmit={handleSubmit} id="upload_form">
-                    <h2>Upload Here!</h2>
+                    <h2>Upload Below!</h2>
                     <input id="title_input" placeholder="Title" onChange={(e) => setNewTitle(e.target.value)}></input>
                     <select class="dropdown_select" value={dropValue} onChange={(e) => handleChange(e)}>
                         <option>Misc</option>
@@ -54,7 +53,7 @@ function UploadForm({ currentUser, onAddUpload}){
                         <option>Code</option>
                         <option>To-Do</option>
                     </select>
-                    <textarea id="content_input" placeholder="Content: Hit tab then enter to Submit." onChange={(e) => setNewContent(e.target.value)}></textarea>
+                    <textarea id="content_input" placeholder="Add content here" onChange={(e) => setNewContent(e.target.value)}></textarea>
                     <input id="submit_upload" type="submit" value="Upload"></input>
                 </form>
             </div>
