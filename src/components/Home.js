@@ -14,7 +14,6 @@ function Home(){
           <h1>IdeaLog</h1>
           <p>Welcome to IdeaLog, a place for you to put your ideas, code, music, etc.</p>
           <p>Go ahead and login above to start the process!</p>
-          <p>Unless you'd like to stay Anonymous, then just dont log in!</p>
         </div>
     )
 }
