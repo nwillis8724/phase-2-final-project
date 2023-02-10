@@ -1,13 +1,6 @@
 import React, { useEffect, useState } from "react"
 
 function Home(){
-    const [uploads, setUploads] = useState([])
-    
-    useEffect(() =>{
-    fetch("http://localhost:3000/uploads")
-        .then((r) => r.json())
-        .then((uploads) => setUploads(uploads))
-    }, [])
 
     return (
         <div id="home">
