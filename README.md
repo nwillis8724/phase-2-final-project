@@ -13,7 +13,7 @@ The Upload Form has two form inputs where you can put a title and the thought th
 
 # Display Page 
 
-The display page, well, displays all the thoughts that have been uploaded so far. Offering a drop down to filter out any thoughts based on whatever category they have. There is also the option to like, or delete any posts. 
+The display page displays all the thoughts that have been uploaded so far. Offering a drop down to filter out any thoughts based on whatever category they have. There is also the option to like, or delete any posts. 
 
 # Sign Out
 
