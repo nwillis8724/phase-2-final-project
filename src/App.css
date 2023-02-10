@@ -82,6 +82,10 @@ p{
   position: absolute;
   top: 10%;
   left: 10%;
+  height: 40px;
+  width: 100px;
+  background-color: #262b3b;
+  color: whitesmoke;
 }
 
 .like_button{
