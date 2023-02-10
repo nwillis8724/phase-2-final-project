@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Switch } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 import './App.css';
 import Home from './components/Home';
 import DisplayPage from './components/DisplayPage';
