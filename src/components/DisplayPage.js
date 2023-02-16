@@ -4,7 +4,6 @@ import React from "react"
 function DisplayPage({uploads, onDeleteUpload, updateLikes, filterValue, handleChange}){  
 
 
-
     function handleDelete(e){
         let parent = e.target.parentNode
         let title = parent.childNodes[1].innerText
@@ -18,7 +17,7 @@ function DisplayPage({uploads, onDeleteUpload, updateLikes, filterValue, handleC
     }
 
     function handleLike(e, targetUpload){
-        
+        console.log(targetUpload)
         
             fetch(`http://localhost:3000/uploads/${targetUpload.id}`, {
                 method: "PATCH",
@@ -33,10 +32,9 @@ function DisplayPage({uploads, onDeleteUpload, updateLikes, filterValue, handleC
             .then((r) => r.json())
             .then((likedUpload) => updateLikes(likedUpload))
         
-
     }
 
-    
+
     return (
         <div>
             <h1>The Log!</h1>
