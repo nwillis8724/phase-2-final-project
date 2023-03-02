@@ -3,7 +3,6 @@ import { NavLink } from "react-router-dom";
 
 function NavBar({currentUser}){
 
-  console.log("always visible navbar")
 
     const linkStyles = {
         display: "inline-block",
