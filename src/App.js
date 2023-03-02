@@ -17,11 +17,16 @@ function App() {
   const [filterValue, setFilterValue] = useState("No Filter")
   const history = useHistory()
 
+  console.log(uploads)
+
     useEffect(() =>{
+      console.log("in the use Effect")
     fetch("http://localhost:3000/uploads")
         .then((r) => r.json())
         .then((uploads) => setUploads(uploads))
     }, [])
+
+    console.log("outside")
 
     function onAddUpload(newUpload){
       setUploads([...uploads, newUpload])
