@@ -1,17 +1,9 @@
-import React, { useState } from "react"
+import React from "react"
 
 
 function DisplayPage({uploads, onDeleteUpload, updateLikes, filterValue, handleChange}){  
-    const [search, setSearch] = useState("")
-    function searchTitle(e){
-        setSearch(e.target.value)
-    }
+
    
-    let filteredUploads = uploads.filter(upload => {
-        let uploadTitle = upload.title.toUpperCase()
-        let searchMade = search.toUpperCase()
-        return uploadTitle.includes(searchMade)
-    })
     function handleDelete(e){
   
         let parent = e.target.parentNode
@@ -55,8 +47,7 @@ function DisplayPage({uploads, onDeleteUpload, updateLikes, filterValue, handleC
                 <option>Code</option>
                 <option>To-Do</option>
             </select>
-            <input placeholder="Search..." onChange={searchTitle}/>
-            {filteredUploads.map((upload, i)=>{
+            {uploads.map((upload, i)=>{
                 return (
                     <div key={i} className="display_cards">
                         <button onClick={handleDelete} className="delete_button">X</button>
