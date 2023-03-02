@@ -4,11 +4,8 @@ import React from "react"
 function DisplayPage({uploads, onDeleteUpload, updateLikes, filterValue, handleChange}){  
 
    
-    function handleDelete(e){
-  
-        let parent = e.target.parentNode
-        let title = parent.childNodes[1].innerText
-        let targetUpload = uploads.find(upload => upload.title === title)
+    function handleDelete(e, targetUpload){
+        console.log(targetUpload)
 
         fetch(`http://localhost:3000/uploads/${targetUpload.id}`, {
             method: "DELETE",
@@ -50,7 +47,7 @@ function DisplayPage({uploads, onDeleteUpload, updateLikes, filterValue, handleC
             {uploads.map((upload, i)=>{
                 return (
                     <div key={i} className="display_cards">
-                        <button onClick={handleDelete} className="delete_button">X</button>
+                        <button onClick={(e) => handleDelete(e, upload)} className="delete_button">X</button>
                         <h1 className="display_title">{upload.title}</h1>
                         <h4 className="category">Category: {upload.category}</h4>
                         <p className="display_content">{upload.content}</p>      

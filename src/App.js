@@ -24,7 +24,6 @@ function App() {
         .then((uploads) => setUploads(uploads))
     }, [])
 
-
     function onAddUpload(newUpload){
       setUploads([...uploads, newUpload])
     }

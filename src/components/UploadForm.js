@@ -7,8 +7,6 @@ function UploadForm({ currentUser, onAddUpload}){
     const [dropValue, setDropValue] = useState("Misc")
     const history = useHistory()  
 
-    console.log("upload form")
-
     function handleSubmit(e){
         e.preventDefault()
 
