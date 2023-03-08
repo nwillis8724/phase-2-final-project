@@ -17,7 +17,6 @@ function App() {
   const [filterValue, setFilterValue] = useState("No Filter")
   const history = useHistory()
 
-
     useEffect(() =>{
     fetch("http://localhost:3000/uploads")
         .then((r) => r.json())

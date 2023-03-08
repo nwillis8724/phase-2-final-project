@@ -1,9 +1,9 @@
 import React from "react"
 
 
-function DisplayPage({uploads, onDeleteUpload, updateLikes, filterValue, handleChange}){  
 
-   
+function DisplayPage({uploads, onDeleteUpload, updateLikes, filterValue, handleChange}){ 
+
     function handleDelete(e, targetUpload){
         console.log(targetUpload)
 
@@ -31,7 +31,6 @@ function DisplayPage({uploads, onDeleteUpload, updateLikes, filterValue, handleC
             .then((likedUpload) => updateLikes(likedUpload))
         
     }
-
 
     return (
         <div>
