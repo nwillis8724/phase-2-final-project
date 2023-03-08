@@ -71,6 +71,21 @@ function App() {
     <div>
       <NavBar currentUser={currentUser} />
       <Switch>
+        <Route exact path="/">
+          <Home />
+        </Route>
+        <Route path="/login">
+          <Login 
+            handleUser={handleUser} 
+            handleLoginInput={handleLoginInput}
+          />
+        </Route>
+        <Route path="/uploadform">
+          <UploadForm 
+            currentUser={currentUser} 
+            onAddUpload={onAddUpload}
+          />
+        </Route>
         <Route path="/displaypage">
           <DisplayPage 
             filterValue={filterValue} 
@@ -80,25 +95,10 @@ function App() {
             updateLikes={updateLikes} 
           />
         </Route>
-        <Route path="/login">
-          <Login 
-            handleUser={handleUser} 
-            handleLoginInput={handleLoginInput}
-          />
-        </Route>
         <Route path="/signout">
           <SignOut 
             handleSignOut={handleSignOut}
           />
-        </Route>
-        <Route path="/uploadform">
-          <UploadForm 
-            currentUser={currentUser} 
-            onAddUpload={onAddUpload}
-          />
-        </Route>
-        <Route exact path="/">
-          <Home />
         </Route>
       </Switch>
     </div>
