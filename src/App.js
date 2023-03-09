@@ -37,7 +37,7 @@ function App() {
 
     function handleSignOut(){
       setCurrentUser("")
-      history.push("/login")
+      history.push("/")
     }
 
     function onDeleteUpload(deletedUpload){
