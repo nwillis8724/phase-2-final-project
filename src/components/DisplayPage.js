@@ -23,7 +23,6 @@ function DisplayPage({uploads, onDeleteUpload, updateLikes, filterValue, handleC
                     "Content-Type": "application/json",
                 },
                 body: JSON.stringify({
-                    likeStatus: true,
                     likes: (targetUpload.likes + 1)
                 }),
             })
